@@ -1,3 +1,9 @@
 backend/node_modules/
 backend/packege-lock.json
 backend/packege.json
+node_modules/
+packege.json
+packege-lock.json
+frontend/node_modules/
+frontend/packege-lock.json
+frontend/packege.json

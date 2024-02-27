@@ -1,10 +1,35 @@
-module.exports = app => {
-    const produtoController = require("../controllers/produto.controller");
+module.exports = (app) => {
+  const produtoController = require("../controllers/produto.controller");
+  const auth = require("../middleawares/auth_jwt_middeaware");
 
-    app.post("/produtos", produtoController.create);
-    app.get("/produtos", produtoController.findAll);
-    app.get("/produtos/:id", produtoController.findById);
-    app.put("/produtos/:id", produtoController.update);
-    app.delete("/produtos/:id", produtoController.delete);
-    app.delete("/produtos", produtoController.deleteAll);
-}
+  app.post(
+    "/produtos",
+    [auth.verifyToken, auth.isAdmin],
+    produtoController.create
+  );
+  app.get(
+    "/produtos",
+    [auth.verifyToken, auth.isBalcao],
+    produtoController.findAll
+  );
+  app.get(
+    "/produtos/:id",
+    [auth.verifyToken, auth.isBalcao],
+    produtoController.findById
+  );
+  app.put(
+    "/produtos/:id",
+    [auth.verifyToken, auth.isAdmin],
+    produtoController.update
+  );
+  app.delete(
+    "/produtos/:id",
+    [auth.verifyToken, auth.isAdmin],
+    produtoController.delete
+  );
+  app.delete(
+    "/produtos",
+    [auth.verifyToken, auth.isAdmin],
+    produtoController.deleteAll
+  );
+};
