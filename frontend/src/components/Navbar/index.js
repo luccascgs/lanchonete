@@ -6,7 +6,7 @@ const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
   return (
     <Nav>
-      <h1>Meu App</h1>
+      <h1>Kelson Lanches</h1>
       <ToggleButton onClick={() => setShowNav(!showNav)}>
         <FaBars />
       </ToggleButton>
