@@ -8,6 +8,7 @@ export const Container = styled.div`
 export const Form = styled.form`
   width: 400px;
   background: #fff;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,8 +26,9 @@ export const Form = styled.form`
   }
   input {
     flex: 1;
+    height: 46px;
     margin-bottom: 15px;
-    padding: 1rem 1.5rem;
+    padding: 0 20px;
     color: #777;
     font-size: 15px;
     width: 100%;
@@ -39,12 +41,13 @@ export const Form = styled.form`
     color: #fff;
     font-size: 16px;
     background: #fc6963;
-    padding: 1rem 1.5rem;
+    height: 56px;
     border: 0;
     border-radius: 5px;
     width: 100%;
   }
   hr {
+    margin: 20px 0;
     border: none;
     border-bottom: 1px solid #cdcdcd;
     width: 100%;
